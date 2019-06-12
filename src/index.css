@@ -18,69 +18,50 @@ font-family: 'Sofia', cursive; */
        GENERAL
 ========================== */
 body {
- background-image: url("https://i.pinimg.com/564x/12/71/30/1271304ac3b65f870c0646ca8a118796.jpg");
- background-repeat: no-repeat;
- background-size: cover;
- font-family: 'Nunito';
- color: #333;
- width:100%; height:100%;
+    background-image: url("https://i.pinimg.com/564x/12/71/30/1271304ac3b65f870c0646ca8a118796.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Nunito';
+    color: #333;
+    width:100%; height:100%;
 }
 
 /* ==========================
        CONTAINERS
 ========================== */
 .main-container {
- width: 25em;
- margin: 5em auto;
- padding: 10px;
- border-radius: 5px;
- background: white;
- box-shadow: 1px 1px #ddd;
- background-color: #ede8e1;
+    width: 25em;
+    margin: 5em auto;
+    padding: 10px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 1px 1px #ddd;
+    background-color: #ede8e1;
 }
+
 /* ==========================
        HEADER/ title
 ========================== */
-.mainTitle{
- text-align: center;
- font-family: 'Shadows Into Light', cursive;
- font-size: 46px;
- margin: auto;
- margin-bottom: 0.2em;
+.mainTitle {
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 46px;
+    margin: auto;
+    margin-bottom: 0.2em;
 }
 .header {
- width: 100%;
- display: flex;
- justify-content: space-between;
- margin-bottom: 1em;
- margin-top: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
-/* .header h1 {
- font-family: var(--accent-font);
- margin: 0;
-} */
-/* .header h2 {
- font-size: 0.8em;
- font-family: var(--accent-font);
- margin: -5px 0;
- color: #888;
-} */
-/* .header ul {
- list-style-type: none;
- margin: 0;
- text-align: right;
- font-size: 0.8em;
- font-weight: 900;
-} */
 .header li {
- margin: 5px 0;
- /* color: var(--second-accent); */
+    margin: 5px 0;
 }
 .header li:hover {
- cursor: pointer;
- /* color: var(--main-accent); */
+    cursor: pointer;
 }
-
 .head-wrap {
     width: 400px;
     display: flex;
@@ -93,7 +74,6 @@ body {
 ========================== */
 .form {
  margin-bottom: 10px;
- /* padding-bottom: 10px; */
 }
 .bold {
     font-weight: 800;
@@ -113,110 +93,102 @@ ul > li {
     font-size: 17px;
 }
 input[type="text"] {
- width: 92%;
- padding: 5px;
- box-sizing: border-box;
- border-radius: 3px;
- border: 1px solid #ccc;
- margin-right: 5px;
+    width: 92%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
 }
 input[type="text"]:focus {
- outline: 0;
- border: 1px solid #888;
+    outline: 0;
+    border: 1px solid #888;
 }
 .submit-button {
- width: 6%;
- padding: 5px;
- box-sizing: border-box;
- background: #888;
- border: 1px solid #888;
- border-radius: 5px;
- color: white;
- font-size: 0.7em;
+    width: 6%;
+    padding: 5px;
+    box-sizing: border-box;
+    background: #888;
+    border: 1px solid #888;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.7em;
 }
 .submit-button:hover {
- cursor: pointer;
- background: #444;
- border: 1px solid #444;
+    cursor: pointer;
+    background: #444;
+    border: 1px solid #444;
 }
 .submit-button:active {
- outline: dashed grey;
+    outline: dashed grey;
 }
+
 /* ==========================
      ITEM LIST & ITEMS
 ========================== */
 .item-list {
- height: 400px;
- overflow: auto;
- padding: 10px;
- box-sizing: border-box;
+    height: 400px;
+    overflow: auto;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .items {
- display: flex;
- justify-content: space-between;
- padding: 10px;
- border-bottom: 1px solid #ccc;
- font-family: serif;
- font-size: 16px;
- text-transform: uppercase;
- letter-spacing: .5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-family: serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
 }
 .grocery-item {
- font-family: 'Roboto';
+    font-family: 'Roboto';
 }
 h4 > span {
     color: navy;
     font-family: 'Artifika', serif;
 }
 .item-actions i {
- margin: 0px 3px;
+    margin: 0px 3px;
 }
 .item-actions i:hover {
- cursor: pointer;
+    cursor: pointer;
 }
 .incomplete:hover {
- color: orange;
+    color: orange;
 }
 .complete:hover {
- color: green;
+    color: green;
 }
 .delete:hover {
- color: red;
+    color: red;
 }
-
-.shoppingList, .purchasedItems{
-  list-style-type: none;
+.shoppingList, .purchasedItems {
+    list-style-type: none;
 }
-
-/* .purchasedItems{
- list-style-type: none;
- padding-right: 2em;
-} */
 .current {
     color: blue;
     text-transform: uppercase;
 }
-
-.slogan{
- font-size: 20px;
- /* font-style: italic; */
- font-weight: lighter;
- text-align: center;
- color: dodgerblue;
- font-family: 'Shadows Into Light', cursive;
- margin: auto;
- margin-bottom: 1.8em;
+.slogan {
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+    color: dodgerblue;
+    font-family: 'Shadows Into Light', cursive;
+    margin: auto;
+    margin-bottom: 1.8em;
 }
-.headers{
- font-size: 15px;
- text-transform: uppercase;
- font-family: serif;
- font-weight: 500;
- padding-top: 30px;
+.headers {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: serif;
+    font-weight: 500;
+    padding-top: 30px;
 }
-.itemInfo{
-  text-transform: none;
-  font-size: 15px;
-  list-style-type: none;
-
+.itemInfo {
+    text-transform: none;
+    font-size: 15px;
+    list-style-type: none;
 }
