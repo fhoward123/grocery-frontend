@@ -73,13 +73,14 @@ body {
        FORM
 ========================== */
 .form {
- margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .bold {
     font-weight: 800;
+    font-size: 22px;
 }
 span.bold {
-    width: 80px;
+    width: 110px;
     float: left;
 }
 span.current.bold {
@@ -90,7 +91,7 @@ ul > li {
 }
 .specifics {
     color: #0303a0;
-    font-size: 20px;
+    font-size: 24px;
 }
 input[type="text"] {
     width: 92%;
@@ -137,7 +138,7 @@ input[type="text"]:focus {
 .items {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    /* padding: 10px; */
     border-bottom: 1px solid #ccc;
     font-family: serif;
     font-size: 18px;
@@ -147,9 +148,14 @@ input[type="text"]:focus {
 .grocery-item {
     font-family: 'Roboto';
 }
+h4 {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
 h4 > span {
     color: navy;
     font-family: 'Artifika', serif;
+    font-size: 22px;
 }
 .item-actions i {
     margin: 0px 3px;
@@ -162,6 +168,9 @@ h4 > span {
 }
 .complete:hover {
     color: green;
+}
+.delete {
+    padding-left: 15px;
 }
 .delete:hover {
     color: red;
@@ -194,4 +203,6 @@ h4 > span {
     text-transform: none;
     font-size: 18px;
     list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 5px;
 }
