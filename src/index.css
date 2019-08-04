@@ -132,7 +132,7 @@ input, input::-webkit-input-placeholder {
      ITEM LIST & ITEMS
 ========================== */
 .item-list {
-    height: 540px;
+    height: 515px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     padding: 10px;
