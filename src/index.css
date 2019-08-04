@@ -132,7 +132,7 @@ input, input::-webkit-input-placeholder {
      ITEM LIST & ITEMS
 ========================== */
 .item-list {
-    height: 500px;
+    height: 540px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     padding: 10px;
@@ -165,14 +165,20 @@ h4 > span {
 .item-actions i:hover {
     cursor: pointer;
 }
+.incomplete {
+    padding-left: 10px;
+}
 .incomplete:hover {
     color: orange;
+}
+.complete {
+    padding-left: 10px;
 }
 .complete:hover {
     color: green;
 }
 .delete {
-    padding-left: 15px;
+    padding-left: 35px;
 }
 .delete:hover {
     color: red;
