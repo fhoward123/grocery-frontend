@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 
 class Header extends Component {
     render() {
+        console.log("Header render (hideForm): ", this.props.hideForm)
         return (
             <div className="">
-                {/* TODO */}
+                {/* Grocery List */}
                 <div className="header">
                     {this.props.currentView === 'toGet'
                         ?
@@ -16,6 +17,17 @@ class Header extends Component {
                             <li className="purchasedItems" onClick = {() => {this.props.handleView('purchased')}}>
                                 Purchased Items: {this.props.purchasedItemsCount}
                             </li>
+                            { this.props.hideForm
+                                ?
+                                <button type="submit"
+                                    className="submit-button"
+                                    onClick={() => {
+                                        this.props.displayForm(true)
+                                    }}>
+                                    <i className="fas fa-plus"></i>
+                                </button>
+                                : <b/>
+                            }
                         </div>
                         :
                         <div className="head-wrap">
@@ -25,6 +37,17 @@ class Header extends Component {
                             <li className="purchasedItems" onClick = {() => {this.props.handleView('purchased')}}>
                                 <span className="current bold">Purchased Items: {this.props.purchasedItemsCount}</span>
                             </li>
+                            { this.props.hideForm
+                                ?
+                                <button type="submit"
+                                    className="submit-button"
+                                    onClick={() => {
+                                        this.props.displayForm(true)
+                                    }}>
+                                    <i className="fas fa-plus"></i>
+                                </button>
+                                : <b></b>
+                            }
                         </div>
                     }
                 </div>

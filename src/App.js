@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-/// components ///
+// components
 import Header from './components/Header'
 import ItemList from './components/ItemList'
 import Form from './components/Form'
@@ -12,6 +12,7 @@ class App extends Component {
             currentView: 'toGet',
             purchasedItems: [],
             itemsToGet: [],
+            hideForm: true
         }
         this.fetchItems = this.fetchItems.bind(this)
         this.handleView = this.handleView.bind(this)
@@ -23,7 +24,9 @@ class App extends Component {
         this.handleCheck = this.handleCheck.bind(this)
         this.removeFromArray = this.removeFromArray.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        this.displayForm = this.displayForm.bind(this)
     }
+
     fetchItems() {
         fetch('https://grocery-backend-api.herokuapp.com/items')
         .then( data => data.json())
@@ -69,7 +72,6 @@ class App extends Component {
         // this toggles the purchased boolean
         console.log('purchased bool before: ', item.purchased)
         item.purchased === 'f' ? item.purchased = true : item.purchased = false
-        // item.purchased = !item.purchased
         console.log('purchased bool AFTER: ', item.purchased)
         console.log('Inside App:handleCheck (item): ', item)
         // now we make our fetch call to PUT (update)
@@ -87,7 +89,8 @@ class App extends Component {
             this.removeFromArray(currentArray, arrayIndex)
             if (currentArray === 'itemsToGet') {
                 this.updateArray(jData[0], 'purchasedItems')
-            } else {
+            }
+            else {
                 this.updateArray(jData[0], 'itemsToGet')
             }
         })
@@ -122,7 +125,6 @@ class App extends Component {
         console.log('Inside App:updateArray (array): ', array)
         // prevState is a copy of the currentState
         this.setState( prevState => {
-            // PrevState['todoTasks'].push(task)
             prevState[array].push(task)
             console.log('Inside App:updateArray (prevState): ', prevState)
             // We are returning an object, thus the return {}
@@ -141,7 +143,8 @@ class App extends Component {
         items.forEach((item) => {
             if (item.purchased === 't') {
                 purchasedItems.push(item)
-            } else {
+            }
+            else {
                 itemsToGet.push(item)
             }
         })
@@ -155,24 +158,40 @@ class App extends Component {
     	})
     }
 
-    componentDidMount(){
+    displayForm = (status) => {
+        console.log('Inside displayForm (status): ', status);
+        console.log('form status: ', this.state.hideForm)
+        this.setState({
+            hideForm: ! status,
+        });
+    }
+
+    componentDidMount() {
         this.fetchItems()
     }
 
     render() {
+        console.log("\nApp render (hideForm): ", this.state.hideForm)
         return(
             <div className="main-container">
-                <h1 className="mainTitle">Grocery List App</h1>
-                <h2 className="slogan">You will never forget it again </h2>
+                <h1 className="mainTitle">Grocery List</h1>
                 <Header
                     currentView={this.state.currentView}
                     handleView={this.handleView}
                     toGetCount={this.state.itemsToGet.length}
                     purchasedItemsCount={this.state.purchasedItems.length}
+                    hideForm={this.state.hideForm}
+                    displayForm={this.displayForm}
+                    clearForm={this.clearForm}
                 />
+            { ! this.state.hideForm
+                ?
                 <Form
                     handleCreateTask={this.handleCreateTask}
+                    displayForm={this.displayForm}
                 />
+                : <b/>
+            }
                 <ItemList
                     currentView={this.state.currentView}
                     purchasedItems={this.state.purchasedItems}
